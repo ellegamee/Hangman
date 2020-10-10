@@ -1,0 +1,4 @@
+In here it will be described how the program will work
+and how to make it if you want to do it on your own.
+
+(Write here)
