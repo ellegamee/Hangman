@@ -22,6 +22,4 @@ myfile.close
 whole_word = random.choice(words)
 master_word = whole_word[:-1]
 
-# TODO: Make the master_word split up into each character
-# ! Not done at the end, maybe works
-print(master_word.split())
+print(master_word)
