@@ -3,7 +3,7 @@ printed into the terminal.
 
 --------------
 
-Astestics:
+Astestics of main menu:
 
 ===============================
 |                             |
@@ -12,6 +12,17 @@ Astestics:
 ===============================
 
 --------------
+
+Astestics of secret dev menu:
+(dev as command)
+
+NOT DONE YET!
+
+===============================
+|                             |
+|   Play    Rules    Exit     |
+|                             |
+===============================
 
 For the future format the different choices
 so they are underlined in the terminal
