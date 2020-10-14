@@ -1,0 +1,18 @@
+This will be how the main menu looks like and that will be
+printed into the terminal.
+
+--------------
+
+Astestics:
+
+===============================
+|                             |
+|   Play    Rules    Exit     |
+|                             |
+===============================
+
+--------------
+
+For the future format the different choices
+so they are underlined in the terminal
+(some type of format)
