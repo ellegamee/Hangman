@@ -5,6 +5,8 @@ words = []
 # Open file where all the words are
 # ! THIS JUST WORKS ON LAPTOP
 # ! DON'T TRY ON STATIONARY
+# TODO Improve this part so it will automatically guide to the right path
+# ? When fixed in the experimentt or main do the same at the other
 
 myfile = open(
     r"C:\Users\User\Documents\Coding\Python\School\Kapitel6\Hangman\Wordsrandom.txt",
