@@ -1,0 +1,29 @@
+This will be how the main menu looks like and that will be
+printed into the terminal.
+
+--------------
+
+Astestics of main menu:
+
+===============================
+|                             |
+|   Play    Rules    Exit     |
+|                             |
+===============================
+
+--------------
+
+Astestics of secret dev menu:
+(dev as command)
+
+NOT DONE YET!
+
+===============================
+|                             |
+|   Play    Rules    Exit     |
+|                             |
+===============================
+
+For the future format the different choices
+so they are underlined in the terminal
+(some type of format)
