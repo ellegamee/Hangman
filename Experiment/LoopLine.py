@@ -1,5 +1,5 @@
 myfile = open(
-    r"C:\Users\User\Documents\Coding\Python\School\Kapitel6\Hangman\Wordsrandom.txt",
+    r".\Dictionaries\Wordsrandom.txt",
     "rt",
     encoding="utf8",
 )

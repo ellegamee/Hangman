@@ -3,13 +3,8 @@ import random
 words = []
 
 # Open file where all the words are
-# ! THIS JUST WORKS ON LAPTOP
-# ! DON'T TRY ON STATIONARY
-# TODO Improve this part so it will automatically guide to the right path
-# ? When fixed in the experimentt or main do the same at the other
-
 myfile = open(
-    r"C:\Users\User\Documents\Coding\Python\School\Kapitel6\Hangman\Wordsrandom.txt",
+    r".\Dictionaries\Wordsrandom.txt",
     "rt",
     encoding="utf8",
 )
@@ -20,8 +15,7 @@ for i in range(221599):
     words.append(content)
 myfile.close
 
-# Chose a random word and remove "/n" in the end
 whole_word = random.choice(words)
-master_word = whole_word[:-1]
+master_word = whole_word.strip()
 
 print(master_word)
