@@ -1,0 +1,36 @@
+Steps:
+    Easy Version
+        1. Floor
+        2. Pole up
+        3. Outward Pole
+        4. Rope
+        5. Head
+        6. Body
+        7. Leg
+        8. Leg
+        9. Arm
+        10. Arm
+
+    Medium Version
+        1. Floor
+        2. Pole up
+        3. Outward Pole
+        4. Rope
+        5.Head
+        6. Body
+        7. Arms
+        8. Legs
+
+    Hard Version
+        1. Floor
+        2. Pole up
+        3. Outward Pole
+        4. Rope and Head
+        5. Body
+        6. Legs and Arms
+
+    Extrem Version
+        1. Floor
+        2. Pole up
+        3. Outward Pole
+        4. Rope and body
