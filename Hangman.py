@@ -11,9 +11,10 @@ while menu_loop:
     )
 
     # Prints and closes main menu txt document
-    content = main_menu.read()
+    # ! Better variable name
+    mmc = main_menu.read()
     main_menu.close()
-    print(content)
+    print(mmc)
 
     # TODO: Make the menu input all lower case: play = Play
     # TODO: Overall improve the menu structure, loop maybe?
@@ -32,10 +33,45 @@ while menu_loop:
         # clear terminal
         os.system("cls" if os.name == "nt" else "clear")
 
-        # TODO: Write the rules in the txt documnt
-        print("This will print the rules.")
-        input("Press Enter to continue...")
-        os.system("cls" if os.name == "nt" else "clear")
+        gameplay = open(
+            r"Documentation\Gameplay.txt",
+            "rt",
+            encoding="utf8",
+        )
+
+        # ! Better variable name
+        gpc = gameplay.read()
+        gameplay.close()
+
+        rules_menu = open(
+            r"Graphics\Rules_menu.txt",
+            "rt",
+            encoding="utf8",
+        )
+
+        # Prints and closes rules txt document
+        # ! Better variable name
+        rmc = rules_menu.read()
+        rules_menu.close()
+
+        while True:
+            print(rmc)
+            rulemenu_choise = input("Choose: ").lower()
+            os.system("cls" if os.name == "nt" else "clear")
+
+            if rulemenu_choise == "gameplay":
+                print(gpc)
+                input("Press Enter to go back... ")
+                os.system("cls" if os.name == "nt" else "clear")
+            elif rulemenu_choise == "difficulties":
+                print("Here will the difficulties print")
+                input("Press Enter to go back... ")
+                os.system("cls" if os.name == "nt" else "clear")
+            elif rulemenu_choise == "back":
+                os.system("cls" if os.name == "nt" else "clear")
+                break
+            else:
+                print("Error, choose an real option!")
 
     elif menu_choise == "exit":
 
@@ -58,14 +94,15 @@ while menu_loop:
         )
 
         # Prints and closes dev txt document
-        content = dev_menu.read()
+        # ! Better variable name
+        dvc = dev_menu.read()
         dev_menu.close()
-        print(content)
 
         while True:
 
             # Decide option
             devmenu_choise = input("\nCommand: ").lower()
+            print(dvc)
 
             # Check what to do
             if devmenu_choise == "back":
