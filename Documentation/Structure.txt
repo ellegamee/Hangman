@@ -37,4 +37,3 @@ INPUT of player.
             When done get INPUT by player IF you want to play again
             or not, if yes do everything again or ELSE close the
             program.
-
