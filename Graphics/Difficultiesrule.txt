@@ -1,0 +1,27 @@
+
+    ========== Difficulties Rules ===========
+    |                                       |
+    |   Easy    Medium    Hard    Extrem    |
+    |                                       |
+    | Easy:                                 |
+    |    10 Lifes                           |
+    |    Continue to write short rule       |
+    |    for this difficultie.              |
+    |                                       |
+    | Medium:                               |
+    |    8 Lifes                            |
+    |    Continue to write short rule       |
+    |    for this difficultie.              |    
+    |                                       |
+    | Hard:                                 |
+    |    6 Lifes                            |
+    |    Continue to write short rule       |
+    |    for this difficultie.              |
+    |                                       |
+    | Extrem:                               |
+    |    4 Lifes                            |
+    |    Hard lexicon with all swedish word |
+    |    possible. If you win at this your  |
+    |    a mad man or just lucky.           |
+    |                                       |
+    =========================================
