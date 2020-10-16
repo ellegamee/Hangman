@@ -4,105 +4,102 @@ menu_loop = True
 while menu_loop:
 
     # Reads the main menu graphics
-    main_menu = open(
+    main_doc = open(
         r"Graphics\Main_menu.txt",
         "rt",
         encoding="utf8",
     )
 
     # Prints and closes main menu txt document
-    # ! Better variable name
-    mmc = main_menu.read()
-    main_menu.close()
-    print(mmc)
+    main_menu = main_doc.read()
+    main_doc.close()
+    print(main_menu)
 
-    # TODO: Make the menu input all lower case: play = Play
-    # TODO: Overall improve the menu structure, loop maybe?
     menu_choise = input("Choose: ").lower()
-    if menu_choise == "play":
+    os.system("cls" if os.name == "nt" else "clear")
 
-        # Stop loop and clear terminal
+    if menu_choise == "play":
         menu_loop = False
-        os.system("cls" if os.name == "nt" else "clear")
 
         # TODO Continue to choose difficultie
         print("Continue with choosing difficultie.")
 
     elif menu_choise == "rules":
 
-        # clear terminal
-        os.system("cls" if os.name == "nt" else "clear")
-
-        gameplay = open(
+        # ! Major text wrong needs to get a look at
+        gameplay_doc = open(
             r"Documentation\Gameplay.txt",
             "rt",
             encoding="utf8",
         )
+        gameplay = gameplay_doc.read()
+        gameplay_doc.close()
 
-        # ! Better variable name
-        gpc = gameplay.read()
-        gameplay.close()
-
-        rules_menu = open(
+        rulemenu_doc = open(
             r"Graphics\Rules_menu.txt",
             "rt",
             encoding="utf8",
         )
+        rulemenu = rulemenu_doc.read()
+        rulemenu_doc.close()
 
-        # Prints and closes rules txt document
-        # ! Better variable name
-        rmc = rules_menu.read()
-        rules_menu.close()
+        difficultiesrule_doc = open(
+            r"Graphics\Difficultiesrule.txt",
+            "rt",
+            encoding="utf8",
+        )
+        difficultiesrule = difficultiesrule_doc.read()
+        difficultiesrule_doc.close()
 
         while True:
-            print(rmc)
+            # prints rule menu, choose menu, clear menu
+            print(rulemenu)
             rulemenu_choise = input("Choose: ").lower()
             os.system("cls" if os.name == "nt" else "clear")
 
             if rulemenu_choise == "gameplay":
-                print(gpc)
+                print(gameplay)
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
+
             elif rulemenu_choise == "difficulties":
-                print("Here will the difficulties print")
+                print(difficultiesrule)
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
+
             elif rulemenu_choise == "back":
                 os.system("cls" if os.name == "nt" else "clear")
                 break
+
             else:
-                print("Error, choose an real option!")
+                print("\n   Error, choose a real option!")
+                time.sleep(2)
+                os.system("cls" if os.name == "nt" else "clear")
 
     elif menu_choise == "exit":
-
-        # clear terminal
-        os.system("cls" if os.name == "nt" else "clear")
 
         # Goodbye greeting to coustomer
         print("Good bye, have a great day.")
         sys.exit()
 
     elif menu_choise == "dev":
-        # Stop loop and clear terminal
-        os.system("cls" if os.name == "nt" else "clear")
 
         # Reads the main menu graphics
-        dev_menu = open(
+        devmenu_doc = open(
             r"Graphics\Dev_menu.txt",
             "rt",
             encoding="utf8",
         )
 
         # Prints and closes dev txt document
-        # ! Better variable name
-        dvc = dev_menu.read()
-        dev_menu.close()
+        devmenu = devmenu_doc.read()
+        devmenu_doc.close()
 
         while True:
 
             # Decide option
             devmenu_choise = input("\nCommand: ").lower()
-            print(dvc)
+            print(devmenu)
 
             # Check what to do
             if devmenu_choise == "back":
@@ -112,12 +109,14 @@ while menu_loop:
             # TODO When at the right moment fix win and so on
             elif devmenu_choise == "win":
                 print("This does not work at the moment right now.")
+
             elif devmenu_choise == "lose":
                 print("This does not work at the moment right now.")
+
             else:
                 print("Wrong option, try again.")
 
     else:
-        print("Error, choose an real option!")
-        time.sleep(1.5)
+        print("\n   Error, choose a real option!")
+        time.sleep(2)
         os.system("cls" if os.name == "nt" else "clear")
