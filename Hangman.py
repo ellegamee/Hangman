@@ -98,8 +98,8 @@ while menu_loop:
         while True:
 
             # Decide option
-            devmenu_choise = input("\nCommand: ").lower()
             print(devmenu)
+            devmenu_choise = input("\nCommand: ").lower()
 
             # Check what to do
             if devmenu_choise == "back":
@@ -115,6 +115,8 @@ while menu_loop:
 
             else:
                 print("Wrong option, try again.")
+                time.sleep(2)
+                os.system("cls" if os.name == "nt" else "clear")
 
     else:
         print("\n   Error, choose a real option!")
