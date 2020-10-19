@@ -1,27 +1,27 @@
 
-    =========== Difficulties Rules ===========
-    |                                        |
-    |   Easy    Medium    Hard    Extreme    |
-    |                                        |
-    | Easy:                                  |
-    |    10 life's                           |
-    |    Continue to write short rule        |
-    |    for this difficulties.              |
-    |                                        |
-    | Medium:                                |
-    |    8 life's                            |
-    |    Continue to write short rule        |
-    |    for this difficulties.              |    
-    |                                        |
-    | Hard:                                  |
-    |    6 life's                            |
-    |    Continue to write short rule        |
-    |    for this difficulties.              |
-    |                                        |
-    | Extreme:                               |
-    |    4 Lifer                             |
-    |    Hard lexicon with all swedish word  |
-    |    possible. If you win at this your   |
-    |    a mad man or just lucky.            |
-    |                                        |
-    ==========================================
+    ============ Difficulties Rules ===========
+    |                                         |
+    |   Easy    Medium    Hard    Extreme     |
+    |                                         |
+    | Easy:                                   |
+    |    10 life's                            |
+    |    Continue to write short rule         |
+    |    for this difficulties.               |
+    |                                         |
+    | Medium:                                 |
+    |    8 life's                             |
+    |    Continue to write short rule         |
+    |    for this difficulties.               |    
+    |                                         |
+    | Hard:                                   |
+    |    6 life's                             |
+    |    Continue to write short rule         |
+    |    for this difficulties.               |
+    |                                         |
+    | Extreme:                                |
+    |    4 Life's                             |
+    |    Hard lexicon with all swedish word   |
+    |    possible. If you win at this your    |
+    |    a mad man or just lucky.             |
+    |                                         |
+    ===========================================
