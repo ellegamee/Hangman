@@ -99,6 +99,10 @@ while menu_loop:
 
             # Decide option
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            devmenu_choise = input("\nCommand: ").lower()
+>>>>>>> parent of 073a1f0... Update Hangman.py
 =======
             devmenu_choise = input("\nCommand: ").lower()
 >>>>>>> parent of 073a1f0... Update Hangman.py
