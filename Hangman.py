@@ -98,8 +98,6 @@ while menu_loop:
         while True:
 
             # Decide option
-
-            devmenu_choise = input("\nCommand: ").lower()
             print(devmenu)
             devmenu_choise = input("\nCommand: ").lower()
 
