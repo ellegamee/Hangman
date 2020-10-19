@@ -39,7 +39,8 @@ while menu_loop:
         difficulties_doc.close()
         os.system("cls" if os.name == "nt" else "clear")
 
-        while True:
+        difficulties_loop = True
+        while difficulties_loop:
             # Input and help
             print(difficulties_menu)
             print("For info type help")
@@ -58,14 +59,13 @@ while menu_loop:
                 or difficulties_choice == "extreme"
             ):
 
+                difficulties_loop = False
                 difficulties = {
                     "easy": {"life's": 10, "animation": "first"},
                     "medium": {"life's": 8, "animation": "second"},
                     "hard": {"life's": 6, "animation": "third"},
                     "extreme": {"life's": 4, "animation": "fourth"},
                 }
-
-                # * difficulties[difficulties_choice]["life's"]
 
                 # Open file where all the words are
                 myfile = open(
@@ -84,7 +84,14 @@ while menu_loop:
 
                 whole_word = random.choice(words)
                 characters = list(whole_word.strip())
-                print(characters)
+                print(" _" * len(characters))
+
+                # while True:
+                print(
+                    "\n You have {} life's left".format(
+                        difficulties[difficulties_choice]["life's"]
+                    )
+                )
 
             else:
                 print("\n   Error, choose a real option!")
