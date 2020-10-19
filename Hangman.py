@@ -10,6 +10,11 @@ while menu_loop:
         encoding="utf8",
     )
 
+    # Prints and closes main menu txt document
+    main_menu = main_doc.read()
+    main_doc.close()
+    print(main_menu)
+
     difficultiesrule_doc = open(
         r"Graphics\Difficultiesrule.txt",
         "rt",
@@ -18,16 +23,11 @@ while menu_loop:
     difficultiesrule = difficultiesrule_doc.read()
     difficultiesrule_doc.close()
 
-    # Prints and closes main menu txt document
-    main_menu = main_doc.read()
-    main_doc.close()
-    print(main_menu)
-
     menu_choice = input("Choose: ").lower()
     os.system("cls" if os.name == "nt" else "clear")
 
     if menu_choice == "play":
-        menu_loop = False
+        # menu_loop = False
 
         difficulties_doc = open(
             r"Graphics\Difficulties.txt",
@@ -52,7 +52,12 @@ while menu_loop:
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
 
-            elif difficulties_choice == "easy" or "medium" or "hard" or "extreme":
+            elif (
+                difficulties_choice == "easy"
+                or difficulties_choice == "medium"
+                or difficulties_choice == "hard"
+                or difficulties_choice == "extreme"
+            ):
 
                 difficulties = {
                     "easy": {"life's": 10, "animation": "first"},
@@ -64,6 +69,7 @@ while menu_loop:
                 # * This is a test of how many lives
                 # difficulties[difficulties_choice]["life's"]
                 input("Works?")
+                os.system("cls" if os.name == "nt" else "clear")
 
             else:
                 print("\n   Error, choose a real option!")
