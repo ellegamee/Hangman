@@ -63,9 +63,7 @@ while menu_loop:
 
                 # * This is a test of how many lives
                 # difficulties[difficulties_choice]["life's"]
-
-                # gets the master word from the computer
-                # TODO DO IT
+                input("Works?")
 
             else:
                 print("\n   Error, choose a real option!")
@@ -160,5 +158,5 @@ while menu_loop:
 
     else:
         print("\n   Error, choose a real option!")
-        time.sleep(2)
+        time.sleep(1)
         os.system("cls" if os.name == "nt" else "clear")
