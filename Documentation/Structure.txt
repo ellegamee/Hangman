@@ -3,7 +3,7 @@ and how to make it if you want to do it on your own.
 
 ====================
 
-Have the computer RANDOM the random word in the beggining
+Have the computer RANDOM the random word in the beginning
 and save it under "master_word".
 
 OUTPUT out the menu that you can she in the menu txt document
@@ -14,25 +14,25 @@ player vs player)
 INPUT of player.
 
     Rules:
-    From the rules txt file, OUTPUT out all the rules neitly
+    From the rules txt file, OUTPUT out all the rules neatly
     and inform the player how to play. By input of the player
     use "Back" to come back to the main menu.
 
     Continue:
     When continue player decides between 4 difficulties by INPUT
-    the name of the difficultie.
+    the name of the difficulties.
 
         Gameplay:
-        LOOP a system where the player INPUT a charachter and see
-        if the master_word charachter is the same. IF NOT take away
-        a live and build the hangingman and guess again.
+        LOOP a system where the player INPUT a character and see
+        if the master_word character is the same. IF NOT take away
+        a live and build the hanging man and guess again.
         
         (Count somewhere in here how many tries you have done
-        and print the hangingman and get a gameover if you get
+        and print the hanging man and get a game over if you get
         the amount of tries you have.)
 
         ELSE check out the word and print out the dashes and put in
-        where the charachter should be.
+        where the character should be.
 
             When done get INPUT by player IF you want to play again
             or not, if yes do everything again or ELSE close the

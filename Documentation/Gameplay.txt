@@ -7,7 +7,7 @@
     |   suggests a letter that occurs in the word, the other player fills in   |
     |   the blanks with that letter in the right places. If the word does not  |
     |   contain the suggested letter, the other player draws one element of a  |
-    |   hangmans gallows. As the game progresses, a segment of the gallows and |  
+    |   hangman gallow. As the game progresses, a segment of the gallows and |  
     |   of a victim is added for every suggested letter not in the word. The   |
     |   number of incorrect guesses before the game ends is up to the players, |
     |   but completing a character in a noose provides a minimum of six wrong  |
