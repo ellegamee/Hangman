@@ -15,16 +15,16 @@ while menu_loop:
     main_doc.close()
     print(main_menu)
 
-    menu_choise = input("Choose: ").lower()
+    menu_choice = input("Choose: ").lower()
     os.system("cls" if os.name == "nt" else "clear")
 
-    if menu_choise == "play":
+    if menu_choice == "play":
         menu_loop = False
 
-        # TODO Continue to choose difficultie
-        print("Continue with choosing difficultie.")
+        # TODO Continue to choose difficulties
+        print("Continue with choosing difficultly.")
 
-    elif menu_choise == "rules":
+    elif menu_choice == "rules":
 
         # ! Major text wrong needs to get a look at
         gameplay_doc = open(
@@ -54,20 +54,20 @@ while menu_loop:
         while True:
             # prints rule menu, choose menu, clear menu
             print(rulemenu)
-            rulemenu_choise = input("Choose: ").lower()
+            rulemenu_choice = input("Choose: ").lower()
             os.system("cls" if os.name == "nt" else "clear")
 
-            if rulemenu_choise == "gameplay":
+            if rulemenu_choice == "gameplay":
                 print(gameplay)
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
 
-            elif rulemenu_choise == "difficulties":
+            elif rulemenu_choice == "difficulties":
                 print(difficultiesrule)
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
 
-            elif rulemenu_choise == "back":
+            elif rulemenu_choice == "back":
                 os.system("cls" if os.name == "nt" else "clear")
                 break
 
@@ -76,13 +76,13 @@ while menu_loop:
                 time.sleep(2)
                 os.system("cls" if os.name == "nt" else "clear")
 
-    elif menu_choise == "exit":
+    elif menu_choice == "exit":
 
-        # Goodbye greeting to coustomer
+        # Goodbye greeting to customer
         print("Good bye, have a great day.")
         sys.exit()
 
-    elif menu_choise == "dev":
+    elif menu_choice == "dev":
 
         # Reads the main menu graphics
         devmenu_doc = open(
@@ -99,18 +99,18 @@ while menu_loop:
 
             # Decide option
             print(devmenu)
-            devmenu_choise = input("\nCommand: ").lower()
+            devmenu_choice = input("\nCommand: ").lower()
 
             # Check what to do
-            if devmenu_choise == "back":
+            if devmenu_choice == "back":
                 os.system("cls" if os.name == "nt" else "clear")
                 break
 
             # TODO When at the right moment fix win and so on
-            elif devmenu_choise == "win":
+            elif devmenu_choice == "win":
                 print("This does not work at the moment right now.")
 
-            elif devmenu_choise == "lose":
+            elif devmenu_choice == "lose":
                 print("This does not work at the moment right now.")
 
             else:
