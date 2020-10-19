@@ -10,6 +10,14 @@ while menu_loop:
         encoding="utf8",
     )
 
+    difficultiesrule_doc = open(
+        r"Graphics\Difficultiesrule.txt",
+        "rt",
+        encoding="utf8",
+    )
+    difficultiesrule = difficultiesrule_doc.read()
+    difficultiesrule_doc.close()
+
     # Prints and closes main menu txt document
     main_menu = main_doc.read()
     main_doc.close()
@@ -82,14 +90,6 @@ while menu_loop:
         )
         rulemenu = rulemenu_doc.read()
         rulemenu_doc.close()
-
-        difficultiesrule_doc = open(
-            r"Graphics\Difficultiesrule.txt",
-            "rt",
-            encoding="utf8",
-        )
-        difficultiesrule = difficultiesrule_doc.read()
-        difficultiesrule_doc.close()
 
         while True:
             # prints rule menu, choose menu, clear menu
