@@ -9,7 +9,7 @@ myfile = open(
     encoding="utf8",
 )
 
-# Reads idividually every line and puts in LST "words"
+# Reads individually every line and puts in LST "words"
 for i in range(221599):
     content = myfile.readline()
     words.append(content)
