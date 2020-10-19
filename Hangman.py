@@ -9,18 +9,11 @@ while menu_loop:
         "rt",
         encoding="utf8",
     )
+
+    # Prints and closes main menu txt document
     main_menu = main_doc.read()
     main_doc.close()
     print(main_menu)
-
-    # Reads and closes the difficulties rules
-    difficultiesrule_doc = open(
-        r"Graphics\Difficultiesrule.txt",
-        "rt",
-        encoding="utf8",
-    )
-    difficultiesrule = difficultiesrule_doc.read()
-    difficultiesrule_doc.close()
 
     menu_choice = input("Choose: ").lower()
     os.system("cls" if os.name == "nt" else "clear")
@@ -90,6 +83,14 @@ while menu_loop:
         rulemenu = rulemenu_doc.read()
         rulemenu_doc.close()
 
+        difficultiesrule_doc = open(
+            r"Graphics\Difficultiesrule.txt",
+            "rt",
+            encoding="utf8",
+        )
+        difficultiesrule = difficultiesrule_doc.read()
+        difficultiesrule_doc.close()
+
         while True:
             # prints rule menu, choose menu, clear menu
             print(rulemenu)
@@ -123,7 +124,7 @@ while menu_loop:
 
     elif menu_choice == "dev":
 
-        # Reads the dev menu graphics
+        # Reads the main menu graphics
         devmenu_doc = open(
             r"Graphics\Dev_menu.txt",
             "rt",
@@ -137,8 +138,8 @@ while menu_loop:
         while True:
 
             # Decide option
-            devmenu_choice = input("\nCommand: ").lower()
             print(devmenu)
+            devmenu_choice = input("\nCommand: ").lower()
 
             # Check what to do
             if devmenu_choice == "back":
@@ -154,6 +155,8 @@ while menu_loop:
 
             else:
                 print("Wrong option, try again.")
+                time.sleep(2)
+                os.system("cls" if os.name == "nt" else "clear")
 
     else:
         print("\n   Error, choose a real option!")
