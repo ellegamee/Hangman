@@ -64,6 +64,7 @@ while menu_loop:
                 # difficulties[difficulties_choice]["life's"]
 
                 # gets the master word from the computer
+                # TODO DO IT
 
             else:
                 print("\n   Error, choose a real option!")
