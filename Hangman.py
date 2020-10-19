@@ -28,6 +28,7 @@ while menu_loop:
 
     if menu_choice == "play":
 
+        menu_loop = False
         difficulties_doc = open(
             r"Graphics\Difficulties.txt",
             "rt",
@@ -85,13 +86,16 @@ while menu_loop:
                 whole_word = random.choice(words)
                 characters = list(whole_word.strip())
                 print(" _" * len(characters))
+                lifes = difficulties[difficulties_choice]["life's"]
 
-                # while True:
-                print(
-                    "\n You have {} life's left".format(
-                        difficulties[difficulties_choice]["life's"]
-                    )
-                )
+                game = True
+                while game:
+
+                    # TODO: remove the infinity loop
+                    print("\n You have {} life's left".format(lifes))
+
+                    if lifes == 0:
+                        game = False
 
             else:
                 print("\n   Error, choose a real option!")
@@ -148,8 +152,7 @@ while menu_loop:
         print("Good bye, have a great day.")
         sys.exit()
 
-    elif menu_choice == "dev":
-
+    elif difficulties_choice == "dev":
         # Reads the main menu graphics
         devmenu_doc = open(
             r"Graphics\Dev_menu.txt",
@@ -177,7 +180,8 @@ while menu_loop:
                 print("This does not work at the moment right now.")
 
             elif devmenu_choice == "lose":
-                print("This does not work at the moment right now.")
+                difficulties[difficulties_choice]["life's"] = 0
+                print("Lives have been set to zero")
 
             else:
                 print("Wrong option, try again.")
