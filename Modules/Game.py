@@ -1,29 +1,11 @@
 import os, time, random, sys
 from Modules.ReadFile import GameRead
-from Modules import RandomWord
+from Modules import RandomWord, WrongOption
 
 
 def gameplay():
-    difficultiesrule_doc = open(
-        r"Graphics\Difficultiesrule.txt",
-        "rt",
-        encoding="utf8",
-    )
-
-    difficultiesrule = difficultiesrule_doc.read()
-    difficultiesrule_doc.close()
-
-    menu_loop = False
-    difficulties_doc = open(
-        r"Graphics\Difficulties.txt",
-        "rt",
-        encoding="utf8",
-    )
-
-    # Prints and closes difficulties menu and txt document
-    difficulties_menu = difficulties_doc.read()
-    difficulties_doc.close()
     os.system("cls" if os.name == "nt" else "clear")
+    GameRead.gameread()
 
     difficulties_loop = True
     while difficulties_loop:
@@ -116,6 +98,4 @@ def gameplay():
                     os.system("cls" if os.name == "nt" else "clear")
 
         else:
-            print("\n   Error, choose a real option!")
-            time.sleep(2)
-            os.system("cls" if os.name == "nt" else "clear")
+            WrongOption.wrong()
