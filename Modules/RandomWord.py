@@ -18,8 +18,7 @@ def randomword():
         words.append(content)
     myfile.close
 
-    # Word preperation
     whole_word = random.choice(words)
     characters = list(whole_word.strip())
-    hidden_characters = list("_" * len(characters))
-    lifes = difficulties[difficulties_choice]["life's"]
+
+    return (whole_word, characters)

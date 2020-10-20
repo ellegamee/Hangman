@@ -1,10 +1,11 @@
 import os, time
 from Modules.ReadFile import RuleRead
+from Modules import WrongOption
 
 
 def rules():
 
-    RuleRead.ruleread()
+    rulemenu, gameplay, difficultiesrule = RuleRead.ruleread()
 
     # prints rule menu, choose menu, clear menu
     while True:
@@ -27,6 +28,4 @@ def rules():
             break
 
         else:
-            print("\n   Error, choose a real option!")
-            time.sleep(2)
-            os.system("cls" if os.name == "nt" else "clear")
+            WrongOption.wrong()

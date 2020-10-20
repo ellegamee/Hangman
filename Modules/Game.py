@@ -5,7 +5,7 @@ from Modules import RandomWord, WrongOption
 
 def gameplay():
     os.system("cls" if os.name == "nt" else "clear")
-    GameRead.gameread()
+    difficulties_menu, difficultiesrule = GameRead.gameread()
 
     difficulties_loop = True
     while difficulties_loop:
@@ -38,7 +38,11 @@ def gameplay():
             }
 
             # * Makes the random word from module
-            RandomWord.randomword()
+            whole_word, characters = RandomWord.randomword()
+
+            # Word preperation
+            hidden_characters = list("_" * len(characters))
+            lifes = difficulties[difficulties_choice]["life's"]
 
             # TODO: For the future make the hanging man print
             # * Main game loop

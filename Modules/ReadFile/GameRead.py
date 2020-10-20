@@ -1,4 +1,7 @@
 def gameread():
+    global difficulties_menu
+    global difficultiesrule
+
     difficulties_doc = open(
         r"Graphics\Difficulties.txt",
         "rt",
@@ -15,3 +18,5 @@ def gameread():
     )
     difficultiesrule = difficultiesrule_doc.read()
     difficultiesrule_doc.close()
+
+    return (difficulties_menu, difficultiesrule)

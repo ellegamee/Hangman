@@ -1,5 +1,6 @@
 def ruleread():
-    # *
+
+    # * Read rule menu
     rulemenu_doc = open(
         r"Graphics\Rules_menu.txt",
         "rt",
@@ -25,3 +26,5 @@ def ruleread():
     )
     difficultiesrule = difficultiesrule_doc.read()
     difficultiesrule_doc.close()
+
+    return (rulemenu, gameplay, difficultiesrule)
