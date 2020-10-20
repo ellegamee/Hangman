@@ -23,6 +23,7 @@ while menu_loop:
     difficultiesrule = difficultiesrule_doc.read()
     difficultiesrule_doc.close()
 
+    # What menu to open
     menu_choice = input("Choose: ").lower()
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -53,6 +54,7 @@ while menu_loop:
                 input("Press Enter to go back... ")
                 os.system("cls" if os.name == "nt" else "clear")
 
+            # Any of the options to continue to play
             elif (
                 difficulties_choice == "easy"
                 or difficulties_choice == "medium"
@@ -60,6 +62,7 @@ while menu_loop:
                 or difficulties_choice == "extreme"
             ):
 
+                # Difficulty data saved
                 difficulties_loop = False
                 difficulties = {
                     "easy": {"life's": 10, "animation": "first"},
@@ -75,27 +78,79 @@ while menu_loop:
                     encoding="utf8",
                 )
 
+                # Entire dictionary will be stored
                 words = []
 
-                # Reads individually every line and puts in LST "words"
+                # Reads individually every line and puts in LIST "words"
                 for i in range(221599):
                     content = myfile.readline()
                     words.append(content)
                 myfile.close
 
+                # Word preperation
                 whole_word = random.choice(words)
                 characters = list(whole_word.strip())
-                print(" _" * len(characters))
+                hidden_characters = list("_" * len(characters))
                 lifes = difficulties[difficulties_choice]["life's"]
 
+                # TODO: For the future make the hanging man print
+                # TODO: What if you win
+                # * Main game loop
                 game = True
                 while game:
 
-                    # TODO: remove the infinity loop
-                    print("\n You have {} life's left".format(lifes))
+                    # TODO: Print the hanging man
+                    # Check if you have lost
+                    if lifes <= 0:
+                        print("you have lost!")
+                        # TODO: Make a menu to play again or exit
+                        # TODO: Print the whole word as a tease
+                        input("Press Enter to Exit... ")
+                        break
 
-                    if lifes == 0:
-                        game = False
+                    # If you win
+                    if " ".join(hidden_characters) == whole_word:
+                        print("Congrats you won!!!")
+
+                    # Cheat to develop the program
+                    print(" " + " ".join(characters))
+
+                    # Life and characters left with input
+                    print(" " + " ".join(hidden_characters) + "\n")
+                    print("You have {} life's left".format(lifes))
+                    character_guess = input("Guess on character: ")
+
+                    # TODO: Make This better
+                    # * First test of character guess
+                    correct_guesses = 0
+                    wrong_guesses = 0
+                    for i in characters:
+                        if character_guess == i:
+                            correct_guesses += 1
+                        else:
+                            wrong_guesses += 1
+
+                    # If you get it right
+                    if correct_guesses > 0:
+                        os.system("cls" if os.name == "nt" else "clear")
+                        print("You found {} characters!".format(correct_guesses))
+                        # TODO: Change out the hidden characters
+                        for y in range(correct_guesses):
+                            position = characters.index(character_guess)
+                            # ? Don't know how to change a string and not the others
+                            del characters[position]
+
+                        input("stop check (remove when finished)")
+                        time.sleep(1.5)
+                        os.system("cls" if os.name == "nt" else "clear")
+
+                    # When nothing right and removes 1 life
+                    else:
+                        os.system("cls" if os.name == "nt" else "clear")
+                        print("\n You found no characters, you loose one life.")
+                        lifes -= 1
+                        time.sleep(3)
+                        os.system("cls" if os.name == "nt" else "clear")
 
             else:
                 print("\n   Error, choose a real option!")
@@ -121,8 +176,8 @@ while menu_loop:
         rulemenu = rulemenu_doc.read()
         rulemenu_doc.close()
 
+        # prints rule menu, choose menu, clear menu
         while True:
-            # prints rule menu, choose menu, clear menu
             print(rulemenu)
             rulemenu_choice = input("Choose: ").lower()
             os.system("cls" if os.name == "nt" else "clear")
@@ -147,12 +202,12 @@ while menu_loop:
                 os.system("cls" if os.name == "nt" else "clear")
 
     elif menu_choice == "exit":
-
         # Goodbye greeting to customer
         print("Good bye, have a great day.")
         sys.exit()
 
-    elif difficulties_choice == "dev":
+    # ? Maybe change or make it public, can find anywhere
+    elif menu_choice == "dev":
         # Reads the main menu graphics
         devmenu_doc = open(
             r"Graphics\Dev_menu.txt",
@@ -178,10 +233,6 @@ while menu_loop:
             # TODO When at the right moment fix win and so on
             elif devmenu_choice == "win":
                 print("This does not work at the moment right now.")
-
-            elif devmenu_choice == "lose":
-                difficulties[difficulties_choice]["life's"] = 0
-                print("Lives have been set to zero")
 
             else:
                 print("Wrong option, try again.")
