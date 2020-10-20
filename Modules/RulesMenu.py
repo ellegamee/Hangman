@@ -1,23 +1,10 @@
 import os, time
+from Modules.ReadFile import RuleRead
 
 
 def rules():
-    # ! Major text wrong needs to get a look at
-    gameplay_doc = open(
-        r"Documentation\Gameplay.txt",
-        "rt",
-        encoding="utf8",
-    )
-    gameplay = gameplay_doc.read()
-    gameplay_doc.close()
 
-    rulemenu_doc = open(
-        r"Graphics\Rules_menu.txt",
-        "rt",
-        encoding="utf8",
-    )
-    rulemenu = rulemenu_doc.read()
-    rulemenu_doc.close()
+    RuleRead.ruleread()
 
     # prints rule menu, choose menu, clear menu
     while True:

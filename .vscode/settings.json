@@ -2,5 +2,8 @@
     "python.formatting.provider": "black",
     "cSpell.words": [
         "difficultiesrule"
+    ],
+    "cSpell.ignoreWords": [
+        "difficultiesrule"
     ]
 }
