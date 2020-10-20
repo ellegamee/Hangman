@@ -94,26 +94,12 @@ while menu_loop:
                 lifes = difficulties[difficulties_choice]["life's"]
 
                 # TODO: For the future make the hanging man print
-                # TODO: What if you win
                 # * Main game loop
                 game = True
                 while game:
 
-                    # TODO: Print the hanging man
-                    # Check if you have lost
-                    if lifes <= 0:
-                        print("you have lost!")
-                        # TODO: Make a menu to play again or exit
-                        # TODO: Print the whole word as a tease
-                        input("Press Enter to Exit... ")
-                        break
-
-                    # If you win
-                    if " ".join(hidden_characters) == whole_word:
-                        print("Congrats you won!!!")
-
                     # Cheat to develop the program
-                    print(" " + " ".join(characters))
+                    print(whole_word)
 
                     # Life and characters left with input
                     print(" " + " ".join(hidden_characters) + "\n")
@@ -134,13 +120,16 @@ while menu_loop:
                     if correct_guesses > 0:
                         os.system("cls" if os.name == "nt" else "clear")
                         print("You found {} characters!".format(correct_guesses))
-                        # TODO: Change out the hidden characters
+
                         for y in range(correct_guesses):
                             position = characters.index(character_guess)
-                            # ? Don't know how to change a string and not the others
-                            del characters[position]
+                            hidden_characters[position] = character_guess
+                            characters[position] = " "
 
-                        input("stop check (remove when finished)")
+                        # If you win
+                        if "".join(hidden_characters) == whole_word:
+                            print("Congrats you won!!!")
+
                         time.sleep(1.5)
                         os.system("cls" if os.name == "nt" else "clear")
 
@@ -149,6 +138,15 @@ while menu_loop:
                         os.system("cls" if os.name == "nt" else "clear")
                         print("\n You found no characters, you loose one life.")
                         lifes -= 1
+
+                        # Check if you have lost
+                        if lifes <= 0:
+                            print(" You have lost!")
+                            # TODO: Make a menu to play again or exit
+                            # TODO: Print the whole word as a tease
+                            input("Press Enter to Exit... ")
+                            break
+
                         time.sleep(3)
                         os.system("cls" if os.name == "nt" else "clear")
 
