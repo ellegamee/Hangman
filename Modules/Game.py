@@ -29,7 +29,6 @@ def gameplay():
         ):
 
             # Difficulty data saved
-            difficulties_loop = False
             difficulties = {
                 "easy": {"life's": 10, "animation": "first"},
                 "medium": {"life's": 8, "animation": "second"},
@@ -60,12 +59,9 @@ def gameplay():
                 # TODO: Make This better
                 # * First test of character guess
                 correct_guesses = 0
-                wrong_guesses = 0
                 for i in characters:
                     if character_guess == i:
                         correct_guesses += 1
-                    else:
-                        wrong_guesses += 1
 
                 # If you get it right
                 if correct_guesses > 0:
@@ -90,15 +86,25 @@ def gameplay():
                     print("\n You found no characters, you loose one life.")
                     lifes -= 1
 
+                    # ! Bugs, it starts over and does shit
                     # Check if you have lost
                     if lifes <= 0:
+                        os.system("cls" if os.name == "nt" else "clear")
                         print(" You have lost!")
-                        # TODO: Make a menu to play again or exit
-                        # TODO: Print the whole word as a tease
-                        input("Press Enter to Exit... ")
-                        break
+                        print(" The correct word was: {}".format(whole_word))
 
-                    time.sleep(3)
+                        # TODO: Make this into a menu
+                        decide = input(
+                            " Press Enter to Exit or type Retry to play again: "
+                        )
+                        if decide.lower() == "retry":
+                            os.system("cls" if os.name == "nt" else "clear")
+                            break
+
+                        else:
+                            sys.exit()
+
+                    time.sleep(1.5)
                     os.system("cls" if os.name == "nt" else "clear")
 
         else:
