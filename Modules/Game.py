@@ -1,6 +1,6 @@
 import os, time, random, sys
 from Modules.ReadFile import GameRead
-from Modules import RandomWord, WrongOption
+from Modules import RandomWord, WrongOption, Endscreen
 
 
 def gameplay():
@@ -50,7 +50,7 @@ def gameplay():
 
                 # Cheat to develop the program
                 print(whole_word)
-
+                print("".join(hidden_characters))
                 # Life and characters left with input
                 print(" " + " ".join(hidden_characters) + "\n")
                 print("You have {} life's left".format(lifes))
@@ -73,36 +73,41 @@ def gameplay():
                         hidden_characters[position] = character_guess
                         characters[position] = " "
 
-                    # If you win
-                    if "".join(hidden_characters) == whole_word:
-                        print("Congrats you won!!!")
+                    # See if there are any "_" left
+                    dash_count = 0
+                    for i in hidden_characters:
+                        if i == "_":
+                            dash_count += 1
+
+                    # If none "_" you win
+                    if dash_count == 0:
+                        os.system("cls" if os.name == "nt" else "clear")
+
+                        while True:
+                            # ! Breaks from inside the function
+                            print("\n     Congrats you won!!!")
+                            Endscreen.endscreen()
 
                     time.sleep(1.5)
                     os.system("cls" if os.name == "nt" else "clear")
 
-                # When nothing right and removes 1 life
+                # When you found no character
                 else:
                     os.system("cls" if os.name == "nt" else "clear")
                     print("\n You found no characters, you loose one life.")
                     lifes -= 1
 
-                    # ! Bugs, it starts over and does shit
                     # Check if you have lost
                     if lifes <= 0:
                         os.system("cls" if os.name == "nt" else "clear")
                         print(" You have lost!")
                         print(" The correct word was: {}".format(whole_word))
+                        os.system("cls" if os.name == "nt" else "clear")
 
-                        # TODO: Make this into a menu
-                        decide = input(
-                            " Press Enter to Exit or type Retry to play again: "
-                        )
-                        if decide.lower() == "retry":
-                            os.system("cls" if os.name == "nt" else "clear")
-                            break
-
-                        else:
-                            sys.exit()
+                        while True:
+                            # ! Breaks from inside the function
+                            print("\n     You lost, nice try!")
+                            Endscreen.endscreen()
 
                     time.sleep(1.5)
                     os.system("cls" if os.name == "nt" else "clear")
