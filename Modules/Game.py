@@ -83,13 +83,7 @@ def gameplay():
                     if dash_count == 0:
                         os.system("cls" if os.name == "nt" else "clear")
 
-                        while True:
-                            # ! Breaks from inside the function
-                            print("\n     Congrats you won!!!")
-                            Endscreen.endscreen()
-
-                    time.sleep(1.5)
-                    os.system("cls" if os.name == "nt" else "clear")
+                        Endscreen.endscreen("\n     Congrats you won!!!")
 
                 # When you found no character
                 else:
@@ -104,13 +98,7 @@ def gameplay():
                         print(" The correct word was: {}".format(whole_word))
                         os.system("cls" if os.name == "nt" else "clear")
 
-                        while True:
-                            # ! Breaks from inside the function
-                            print("\n     You lost, nice try!")
-                            Endscreen.endscreen()
-
-                    time.sleep(1.5)
-                    os.system("cls" if os.name == "nt" else "clear")
+                        Endscreen.endscreen("\n     You lost, nice try!")
 
         else:
             WrongOption.wrong()
