@@ -5,12 +5,16 @@ menu_loop = True
 while menu_loop:
 
     Main_Menu.main_menu()
+    # ! This does not solve it
+    cheat_word = False
+
     # What menu to open
     menu_choice = input("Choose: ").lower()
     os.system("cls" if os.name == "nt" else "clear")
 
     if menu_choice == "play":
-        Game.gameplay()
+        # ! Does not help the problem
+        cheat_word = Game.gameplay()
 
     elif menu_choice == "rules":
         RulesMenu.rules()

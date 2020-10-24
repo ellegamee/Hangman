@@ -45,14 +45,17 @@ def gameplay():
 
             # Character preperation
             wrong_characters = []
+            all_characters = []
 
             # TODO: For the future make the hanging man print
             # * Main game loop
             game = True
             while game:
-
                 # Cheat to develop the program
-                # print(whole_word)
+                # TODO: Toggle with dev menu
+                # ! "cheat_word" is undefined
+                if cheat_word == True:
+                    print(whole_word)
 
                 # Life and characters left with input
                 print(" " + " ".join(hidden_characters) + "\n")
@@ -60,7 +63,13 @@ def gameplay():
                 print("\nYou have {} life's left".format(lifes))
                 character_guess = input("Guess on character: ")
 
-                # TODO: Make This better
+                # If you already have used a character and save it
+                if character_guess in all_characters:
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print("You have already guessed {}.\n".format(character_guess))
+                    continue
+                all_characters.append(character_guess.lower())
+
                 # * First test of character guess
                 correct_guesses = 0
                 for i in characters:
@@ -112,3 +121,5 @@ def gameplay():
 
         else:
             WrongOption.wrong()
+    
+    return (cheat_word)
