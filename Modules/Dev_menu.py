@@ -2,7 +2,7 @@ import time, os
 from Modules import WrongOption
 
 
-def dev():
+def dev(cheat_word):
     # Reads the main menu graphics
     devmenu_doc = open(
         r"Graphics\Dev_menu.txt",
@@ -13,7 +13,6 @@ def dev():
     # Prints and closes dev txt document
     devmenu = devmenu_doc.read()
     devmenu_doc.close()
-
     while True:
 
         # Decide option
@@ -23,13 +22,15 @@ def dev():
         # Check what to do
         if devmenu_choice == "back":
             os.system("cls" if os.name == "nt" else "clear")
-            break
+            return cheat_word
             time.sleep(2)
             os.system("cls" if os.name == "nt" else "clear")
 
         elif devmenu_choice == "cheat":
-            cheat_menu = True
-            print("Nu syns master word!")
+            cheat_word = True
+            print("Now will the guess word be seen!")
+            time.sleep(2)
+            os.system("cls" if os.name == "nt" else "clear")
 
         # TODO When at the right moment fix win and so on
         elif devmenu_choice == "win":

@@ -3,7 +3,7 @@ from Modules.ReadFile import GameRead
 from Modules import RandomWord, WrongOption, Endscreen
 
 
-def gameplay():
+def gameplay(cheat_word):
     os.system("cls" if os.name == "nt" else "clear")
     difficulties_menu, difficultiesrule = GameRead.gameread()
 
@@ -121,5 +121,3 @@ def gameplay():
 
         else:
             WrongOption.wrong()
-    
-    return (cheat_word)
