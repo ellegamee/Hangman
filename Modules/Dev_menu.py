@@ -17,7 +17,7 @@ def dev(cheat_word):
 
         # Decide option
         print(devmenu)
-        devmenu_choice = input("\nCommand: ").lower()
+        devmenu_choice = input("Command: ").lower()
 
         # Check what to do
         if devmenu_choice == "back":
@@ -28,8 +28,8 @@ def dev(cheat_word):
 
         elif devmenu_choice == "cheat":
             cheat_word = True
-            print("Now will the guess word be seen!")
-            time.sleep(2)
+            print("You can now see the hidden word!")
+            time.sleep(2.5)
             os.system("cls" if os.name == "nt" else "clear")
 
         # TODO When at the right moment fix win and so on
