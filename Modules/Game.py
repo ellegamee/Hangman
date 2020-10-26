@@ -52,9 +52,14 @@ def gameplay(cheat_word):
             # * Main game loop
             game = True
             while game:
+
+                # Cheat to develop the program
+                if cheat_word == True:
+                    print("\n " + whole_word.strip())
+
                 # Life and characters left with input
                 print("\n " + " ".join(hidden_characters) + "\n")
-                print("Wrong: " + ", ".join(wrong_characters))
+                print(" Wrong: " + ", ".join(wrong_characters))
                 print("\nYou have {} life's left".format(lifes))
                 character_guess = input("Guess on character: ")
 
@@ -62,11 +67,6 @@ def gameplay(cheat_word):
                 if character_guess == "dev":
                     os.system("cls" if os.name == "nt" else "clear")
                     cheat_word = Dev_menu.dev(cheat_word)
-
-                # ! Dont work right now
-                # Cheat to develop the program
-                if cheat_word == True:
-                    print(" " + whole_word)
 
                 # Cheacks in you type more than one character
                 if len(character_guess) >= 2 or len(character_guess.strip()) == 0:

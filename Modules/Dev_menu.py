@@ -23,13 +23,17 @@ def dev(cheat_word):
         if devmenu_choice == "back":
             os.system("cls" if os.name == "nt" else "clear")
             return cheat_word
-            time.sleep(2)
-            os.system("cls" if os.name == "nt" else "clear")
 
         elif devmenu_choice == "cheat":
-            cheat_word = True
-            print("You can now see the hidden word!")
-            time.sleep(2)
+            if cheat_word == False:
+                cheat_word = True
+                print("Word cheat turned on!")
+
+            elif cheat_word == True:
+                cheat_word = False
+                print("Word cheat turned off!")
+
+            time.sleep(1.5)
             os.system("cls" if os.name == "nt" else "clear")
 
         # TODO When at the right moment fix win and so on

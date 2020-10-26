@@ -1,6 +1,6 @@
 
     ============== Dev Menu =============        
     |                                   |
-    |   Back    Cheat    Win    Lose    |
+    |   Cheat    Win    Lose    Back    |
     |                                   |
     =====================================
