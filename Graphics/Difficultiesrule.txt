@@ -4,22 +4,28 @@
     |   Easy    Medium    Hard    Extreme     |
     |                                         |
     | Easy:                                   |
-    |    10 life's                            |
-    |    Continue to write short rule         |
-    |    for this difficulties.               |
+    |    + 10 life's                          |
+    |    You will guess a word from the most  |
+    |    used swedish words. Recomendated to  |
+    |    play for the first time.             |
     |                                         |
     | Medium:                                 |
-    |    8 life's                             |
-    |    Continue to write short rule         |
-    |    for this difficulties.               |    
+    |    + 8 life's                           |
+    |    Usage of the harder lexicon but with |
+    |    eight lifes it's still duable. For   | 
+    |    those who knows the swedish languge  |
+    |    well enogh and can guess your self   |
+    |    to the solution.                     |    
     |                                         |
     | Hard:                                   |
-    |    6 life's                             |
-    |    Continue to write short rule         |
-    |    for this difficulties.               |
+    |    + 6 life's                           |
+    |    Hard lexicon with 6 lives, can make  |
+    |    mistaces but not that many. This     |
+    |    needs some skill on the swedish      |
+    |    languge. Good luck!                  |
     |                                         |
     | Extreme:                                |
-    |    4 Life's                             |
+    |    + 4 Life's                           |
     |    Hard lexicon with all swedish word   |
     |    possible. If you win at this your    |
     |    a mad man or just lucky.             |

@@ -29,7 +29,7 @@ def dev(cheat_word):
         elif devmenu_choice == "cheat":
             cheat_word = True
             print("You can now see the hidden word!")
-            time.sleep(2.5)
+            time.sleep(2)
             os.system("cls" if os.name == "nt" else "clear")
 
         # TODO When at the right moment fix win and so on

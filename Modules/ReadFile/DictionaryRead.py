@@ -9,7 +9,7 @@ def dictread():
         encoding="utf8",
     )
 
-    for i in range(138322):
+    for _ in range(136211):
         content = Dictionary1.readline()
         dict_easy.append(content)
     Dictionary1.close
@@ -21,7 +21,7 @@ def dictread():
         encoding="utf8",
     )
 
-    for i in range(221599):
+    for _ in range(221599):
         content = Dictionary2.readline()
         dict_hard.append(content)
     Dictionary2.close
