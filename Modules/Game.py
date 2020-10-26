@@ -63,7 +63,6 @@ def gameplay(cheat_word):
                 print("\nYou have {} life's left".format(lifes))
                 character_guess = input("Guess on character: ")
 
-                # ! Can't change wile ingame hide and show cheat word
                 if character_guess == "dev":
                     os.system("cls" if os.name == "nt" else "clear")
                     cheat_word = Dev_menu.dev(cheat_word)
