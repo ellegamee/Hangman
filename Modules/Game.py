@@ -61,74 +61,67 @@ def gameplay(cheat_word):
                 print("\n " + " ".join(hidden_characters) + "\n")
                 print(" Wrong: " + ", ".join(wrong_characters))
                 print("\nYou have {} life's left".format(lifes))
-                character_guess = input("Guess on character: ")
+                character_guess = input("Guess on character: ").strip()
 
+                os.system("cls" if os.name == "nt" else "clear")
                 if character_guess == "dev":
-                    os.system("cls" if os.name == "nt" else "clear")
                     cheat_word = Dev_menu.dev(cheat_word)
 
-                # Cheacks in you type more than one character
-                if len(character_guess) >= 2 or len(character_guess.strip()) == 0:
-                    if character_guess == "dev":
-                        continue
-                    else:
-                        os.system("cls" if os.name == "nt" else "clear")
-                        print("\n You can just guess one character!")
-                        continue
+                elif len(character_guess) == 0:
+                    print("\n You must guess a character!")
+
+                elif character_guess == whole_word:
+                    lost, game, guess_whole_word = False, False, True
+                    Endscreen.endscreen(whole_word, lost, guess_whole_word)
+
+                elif len(character_guess) > 1 and character_guess != whole_word:
+                    lost, game, guess_whole_word = True, False, True
+                    Endscreen.endscreen(whole_word, lost, guess_whole_word)
 
                 # If you already have used a character and save it
-                if character_guess in all_characters:
-                    os.system("cls" if os.name == "nt" else "clear")
+                elif character_guess in all_characters:
                     print("\n You have already guessed: {}".format(character_guess))
-                    continue
 
-                all_characters.append(character_guess.lower())
-
-                # * First test of character guess
-                correct_guesses = 0
-                for i in characters:
-                    if character_guess.lower() == i:
-                        correct_guesses += 1
-
-                # If you get it right
-                if correct_guesses > 0:
-                    os.system("cls" if os.name == "nt" else "clear")
-                    print("\n You found {} characters!".format(correct_guesses))
-
-                    for y in range(correct_guesses):
-                        position = characters.index(character_guess.lower())
-                        hidden_characters[position] = character_guess.lower()
-                        characters[position] = " "
-
-                    # See if there are any "_" left
-                    dash_count = 0
-                    for i in hidden_characters:
-                        if i == "_":
-                            dash_count += 1
-
-                    # If none "_" you win
-                    if dash_count == 0:
-                        os.system("cls" if os.name == "nt" else "clear")
-
-                        game = False
-                        Endscreen.endscreen("\n     Congrats you won!!!")
-
-                # When you found no character
                 else:
-                    os.system("cls" if os.name == "nt" else "clear")
-                    print("\n You found no characters, you loose one life.")
-                    lifes -= 1
+                    # * First test of character guess
+                    all_characters.append(character_guess.lower())
+                    correct_guesses = 0
+                    for i in characters:
+                        if character_guess.lower() == i:
+                            correct_guesses += 1
 
-                    # Saves wrong character
-                    wrong_characters.append(character_guess.lower())
+                    # If you get it right
+                    if correct_guesses > 0:
+                        print("\n You found {} characters!".format(correct_guesses))
 
-                    # Check if you have lost
-                    if lifes <= 0:
-                        os.system("cls" if os.name == "nt" else "clear")
-                        print("\n   Correct word: {}".format(whole_word))
+                        for _ in range(correct_guesses):
+                            position = characters.index(character_guess.lower())
+                            hidden_characters[position] = character_guess.lower()
+                            characters[position] = " "
 
-                        game = False
-                        Endscreen.endscreen("     You lost, nice try!")
+                        # See if there are any "_" left
+                        dash_count = 0
+                        for i in hidden_characters:
+                            if i == "_":
+                                dash_count += 1
+
+                        # If none "_" you win
+                        if dash_count == 0:
+                            lost, game, guess_whole_word = False, False, False
+                            Endscreen.endscreen(whole_word, lost, guess_whole_word)
+
+                    # When you found no character
+                    else:
+                        print("\n You found no characters, you loose one life.")
+                        lifes -= 1
+
+                        # Saves wrong character
+                        wrong_characters.append(character_guess.lower())
+
+                        # Check if you have lost
+                        if lifes <= 0:
+                            lost, game, guess_whole_word = True, False, False
+                            Endscreen.endscreen(whole_word, lost, guess_whole_word)
 
         elif difficulties_choice == "back":
             os.system("cls" if os.name == "nt" else "clear")

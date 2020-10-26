@@ -9,9 +9,10 @@ def dictread():
         encoding="utf8",
     )
 
-    for _ in range(136211):
-        content = Dictionary1.readline()
+    content = Dictionary1.readline()
+    while content:
         dict_easy.append(content)
+        content = Dictionary1.readline()
     Dictionary1.close
 
     # * Read difficulties rules
@@ -21,9 +22,10 @@ def dictread():
         encoding="utf8",
     )
 
-    for _ in range(221599):
-        content = Dictionary2.readline()
+    content = Dictionary2.readline()
+    while content:
         dict_hard.append(content)
+        content = Dictionary2.readline()
     Dictionary2.close
 
     return (dict_easy, dict_hard)
