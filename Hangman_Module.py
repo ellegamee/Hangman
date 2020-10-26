@@ -1,6 +1,7 @@
 import random, time, os, sys
 from Modules import Game, RulesMenu, WrongOption, Main_Menu, Dev_menu
 
+os.system("cls" if os.name == "nt" else "clear")
 cheat_word = False
 menu_loop = True
 while menu_loop:
