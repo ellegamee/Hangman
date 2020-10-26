@@ -1,6 +1,6 @@
 import os, time, random, sys
 from Modules.ReadFile import GameRead
-from Modules import RandomWord, WrongOption, Endscreen
+from Modules import RandomWord, WrongOption, Endscreen, Dev_menu
 
 
 def gameplay(cheat_word):
@@ -30,14 +30,15 @@ def gameplay(cheat_word):
 
             # Difficulty data saved
             difficulties = {
-                "easy": {"life's": 10, "animation": "first"},
-                "medium": {"life's": 8, "animation": "second"},
-                "hard": {"life's": 6, "animation": "third"},
-                "extreme": {"life's": 4, "animation": "fourth"},
+                "easy": {"life's": 10, "lexicon": "easy"},
+                "medium": {"life's": 8, "lexicon": "easy"},
+                "hard": {"life's": 6, "lexicon": "hard"},
+                "extreme": {"life's": 4, "lexicon": "hard"},
             }
 
             # * Makes the random word from module
-            whole_word, characters = RandomWord.randomword()
+            lexicon = difficulties[difficulties_choice]["lexicon"]
+            whole_word, characters = RandomWord.randomword(lexicon)
 
             # Word preperation
             hidden_characters = list("_" * len(characters))
@@ -51,23 +52,37 @@ def gameplay(cheat_word):
             # * Main game loop
             game = True
             while game:
-                # Cheat to develop the program
-                # TODO: Toggle with dev menu
-                # ! "cheat_word" is undefined
-                if cheat_word == True:
-                    print(whole_word)
-
                 # Life and characters left with input
                 print(" " + " ".join(hidden_characters) + "\n")
-                print(" " + ", ".join(wrong_characters))
+                print("Wrong: " + ", ".join(wrong_characters))
                 print("\nYou have {} life's left".format(lifes))
                 character_guess = input("Guess on character: ")
+
+                # ! Dont work right now
+                # Cheat to develop the program
+                if cheat_word == True:
+                    print(" " + whole_word)
+
+                # ! Can't change wile ingame hide and show cheat word
+                if character_guess == "dev":
+                    os.system("cls" if os.name == "nt" else "clear")
+                    Dev_menu.dev(cheat_word)
+
+                # Cheacks in you type more than one character
+                if len(character_guess) >= 2 or len(character_guess.strip()) == 0:
+                    if character_guess == "dev":
+                        continue
+                    else:
+                        os.system("cls" if os.name == "nt" else "clear")
+                        print(" \nYou can just guess one character!\n")
+                        continue
 
                 # If you already have used a character and save it
                 if character_guess in all_characters:
                     os.system("cls" if os.name == "nt" else "clear")
-                    print("You have already guessed {}.\n".format(character_guess))
+                    print(" \nYou have already guessed: {}\n".format(character_guess))
                     continue
+
                 all_characters.append(character_guess.lower())
 
                 # * First test of character guess
