@@ -1,24 +1,17 @@
 import random
+from Modules.ReadFile import DictionaryRead
 
 
-def randomword():
-    # Open file where all the words are
-    myfile = open(
-        r".\Dictionaries\Wordsrandom.txt",
-        "rt",
-        encoding="utf8",
-    )
+def randomword(lexicon):
 
-    # Entire dictionary will be stored
-    words = []
+    dict_easy, dict_hard = DictionaryRead.dictread()
 
-    # Reads individually every line and puts in LIST "words"
-    for i in range(221599):
-        content = myfile.readline()
-        words.append(content)
-    myfile.close
+    if lexicon == "easy" or lexicon == "medium":
+        whole_word = random.choice(dict_easy)
+        characters = list(whole_word.strip())
 
-    whole_word = random.choice(words)
-    characters = list(whole_word.strip())
+    elif lexicon == "hard" or lexicon == "extreme":
+        whole_word = random.choice(dict_hard)
+        characters = list(whole_word.strip())
 
     return (whole_word, characters)
