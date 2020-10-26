@@ -1,6 +1,12 @@
+         
+         Welcome to hangman!
+           Swedish Lexicon
 
     ========= Main Menu =========
     |                           |
     |   Play    Rules    Exit   |
     |                           |
     =============================
+
+
+Choose by typing with the keyboard
