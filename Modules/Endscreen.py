@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, time
 from Modules import WrongOption
 
 
@@ -17,15 +17,17 @@ def endscreen(whole_word, lost, guess_whole_word):
         if lost == True:
             if guess_whole_word == True:
                 print("\n You tried to guess the whole word!")
-                print(" You got it wrong!")
+                print("       You got it wrong!")
+                time.sleep(2)
 
             print("\n   Correct word: {}".format(whole_word))
-            print("   You lost, nice try!")
+            print("     You lost, nice try!")
 
         elif lost == False:
             if guess_whole_word == True:
                 print("\n You tried to guess the whole word!")
-                print(" You got it right!")
+                print("    You got it right!")
+                time.sleep(2)
 
             print("\n     Congrats you won!!!")
 

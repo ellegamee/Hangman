@@ -76,7 +76,7 @@ def gameplay(cheat_word):
 
                 # Cheat to develop the program
                 if cheat_word == True:
-                    print("\n " + whole_word.strip())
+                    print(" {}\n".format(whole_word.strip()))
 
                 # Prints welcome to introduce
                 if first_round == True:
