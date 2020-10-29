@@ -1,5 +1,5 @@
 import os, time, random, sys
-from Modules.ReadFile import GameRead
+from Modules.ReadFile import GameRead, Hangingman
 from Modules import RandomWord, WrongOption, Endscreen, Dev_menu
 
 
@@ -30,10 +30,26 @@ def gameplay(cheat_word):
 
             # Difficulty data saved
             difficulties = {
-                "easy": {"life's": 10, "lexicon": "easy"},
-                "medium": {"life's": 8, "lexicon": "hard"},
-                "hard": {"life's": 6, "lexicon": "hard"},
-                "extreme": {"life's": 4, "lexicon": "hard"},
+                "easy": {
+                    "life's": 10,
+                    "lexicon": "easy",
+                    "animation": "animation_easy.txt",
+                },
+                "medium": {
+                    "life's": 8,
+                    "lexicon": "hard",
+                    "animation": "animation_medium.txt",
+                },
+                "hard": {
+                    "life's": 6,
+                    "lexicon": "hard",
+                    "animation": "animation_hard.txt",
+                },
+                "extreme": {
+                    "life's": 4,
+                    "lexicon": "hard",
+                    "animation": "animation_extreme.txt",
+                },
             }
 
             # * Makes the random word from module
@@ -48,14 +64,31 @@ def gameplay(cheat_word):
             wrong_characters = []
             all_characters = []
 
+            # Animation
+            hangingman = Hangingman.animation_lines(difficulties, difficulties_choice)
+            frame = 0
+
             # TODO: For the future make the hanging man print
             # * Main game loop
             game = True
+            first_round = True
             while game:
 
                 # Cheat to develop the program
                 if cheat_word == True:
                     print("\n " + whole_word.strip())
+
+                # Prints welcome to introduce
+                if first_round == True:
+                    print("\n Start to guess your first character!\n")
+                    first_round = False
+
+                # Prints hangingman
+                start = 0 + (10 * frame)
+                stop = 9 + (10 * frame)
+
+                for i in range(start, stop):
+                    print(" " + hangingman[i].strip())
 
                 # Life and characters left with input
                 print("\n " + " ".join(hidden_characters) + "\n")
@@ -92,7 +125,7 @@ def gameplay(cheat_word):
 
                     # If you get it right
                     if correct_guesses > 0:
-                        print("\n You found {} characters!".format(correct_guesses))
+                        print("\n You found {} characters!\n".format(correct_guesses))
 
                         for _ in range(correct_guesses):
                             position = characters.index(character_guess.lower())
@@ -112,11 +145,9 @@ def gameplay(cheat_word):
 
                     # When you found no character
                     else:
-                        print("\n You found no characters, you loose one life.")
+                        print("\n You found no characters, you loose one life.\n")
                         lifes -= 1
-
-                        # Saves wrong character
-                        wrong_characters.append(character_guess.lower())
+                        frame += 1
 
                         # Check if you have lost
                         if lifes <= 0:
