@@ -113,7 +113,7 @@ def gameplay(cheat_word):
 
                 # If you already have used a character and save it
                 elif character_guess in all_characters:
-                    print("\n You have already guessed: {}".format(character_guess))
+                    print("\n You have already guessed: {}\n".format(character_guess))
 
                 else:
                     # * First test of character guess
