@@ -94,7 +94,7 @@ def gameplay(cheat_word):
                 print("\n " + " ".join(hidden_characters) + "\n")
                 print(" Wrong: " + ", ".join(wrong_characters))
                 print("\nYou have {} life's left".format(lifes))
-                character_guess = input("Guess on character: ").strip()
+                character_guess = input("Guess on character: ").strip().lower()
 
                 os.system("cls" if os.name == "nt" else "clear")
                 if character_guess == "dev":
@@ -117,10 +117,10 @@ def gameplay(cheat_word):
 
                 else:
                     # * First test of character guess
-                    all_characters.append(character_guess.lower())
+                    all_characters.append(character_guess)
                     correct_guesses = 0
                     for i in characters:
-                        if character_guess.lower() == i:
+                        if character_guess == i:
                             correct_guesses += 1
 
                     # If you get it right
@@ -128,8 +128,8 @@ def gameplay(cheat_word):
                         print("\n You found {} characters!\n".format(correct_guesses))
 
                         for _ in range(correct_guesses):
-                            position = characters.index(character_guess.lower())
-                            hidden_characters[position] = character_guess.lower()
+                            position = characters.index(character_guess)
+                            hidden_characters[position] = character_guess
                             characters[position] = " "
 
                         # See if there are any "_" left
@@ -148,6 +148,7 @@ def gameplay(cheat_word):
                         print("\n You found no characters, you loose one life.\n")
                         lifes -= 1
                         frame += 1
+                        wrong_characters.append(character_guess)
 
                         # Check if you have lost
                         if lifes <= 0:
