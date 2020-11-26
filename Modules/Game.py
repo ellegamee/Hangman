@@ -68,7 +68,6 @@ def gameplay(cheat_word):
             hangingman = Hangingman.animation_lines(difficulties, difficulties_choice)
             frame = 0
 
-            # TODO: For the future make the hanging man print
             # * Main game loop
             game = True
             first_round = True
