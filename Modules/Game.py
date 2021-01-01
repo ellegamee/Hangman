@@ -1,4 +1,4 @@
-import os, time, random, sys
+import os
 from Modules.ReadFile import GameRead, Hangingman
 from Modules import RandomWord, WrongOption, Endscreen, Dev_menu
 

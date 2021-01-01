@@ -1,6 +1,3 @@
-from Modules import Game
-
-
 def animation_lines(difficulties, difficulties_choice):
     file_name = difficulties[difficulties_choice]["animation"]
     animation = open(

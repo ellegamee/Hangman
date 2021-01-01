@@ -1,4 +1,4 @@
-import os, time
+import os
 from Modules.ReadFile import RuleRead
 from Modules import WrongOption
 

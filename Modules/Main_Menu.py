@@ -1,6 +1,3 @@
-import os
-
-
 def main_menu():
     # Reads the main menu graphics
     main_doc = open(

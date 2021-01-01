@@ -5,7 +5,7 @@ myfile = open(
 )
 
 for _ in range(4):
-    input("nasta gubbe\n")
+    input("nästa gubbe\n")
     start = 1
     stop = 11
 

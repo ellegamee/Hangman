@@ -1,4 +1,4 @@
-import random, time, os, sys
+import os, sys
 from Modules import Game, RulesMenu, WrongOption, Main_Menu, Dev_menu
 
 os.system("cls" if os.name == "nt" else "clear")
